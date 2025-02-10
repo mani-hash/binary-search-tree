@@ -2,7 +2,9 @@
 #include "types.h"
 #include "findSize.h"
 
-int calculateTotalSize(Node *node)
+static int calculateTotalSize(Node *node);
+
+static int calculateTotalSize(Node *node)
 {
     if (node == NULL)
     {
