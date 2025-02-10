@@ -40,12 +40,12 @@ Tree* getDataFromFile()
 
     while ((characterBuffer = fgetc(file)) != EOF)
     {
-        if (characterBuffer == ' ' || characterBuffer == '\n')
+        if (characterBuffer == ' ')
         {
             continue;
         }
 
-        if (characterBuffer == ',' || characterBuffer == '.')
+        if (characterBuffer == ',' || characterBuffer == '.' || characterBuffer == '\n')
         {
             char* word = getWordFromBuffer();
             insertNode(tree, word);
