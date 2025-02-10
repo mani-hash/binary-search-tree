@@ -69,7 +69,7 @@ static void freeGraphNode(Node *node)
     }
     else if (node->right != NULL)
     {
-        freeGraphData(node->right);
+        freeGraphNode(node->right);
     }
 
     free(node->data);
