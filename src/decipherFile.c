@@ -81,4 +81,6 @@ void freeGraphData(Tree* tree)
     Node *currentNode = tree->root;
 
     freeGraphNode(currentNode);
+
+    free(tree);
 }
