@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "types.h"
+#include "graph.h"
+#include "decipherFile.h"
+
+static char* getWordFromBuffer();
+
+FILE *file;
+const char inputFile[] = "data/input.txt";
+char wordBuffer[50];
+int bufferIndex = 0; 
+char characterBuffer;
+
+static char* getWordFromBuffer()
+{
+    char* word = malloc((bufferIndex + 1) * sizeof(char));
+    int wordIndex = 0;
+    for (wordIndex = 0; wordIndex < bufferIndex; bufferIndex++)
+    {
+        word[wordIndex] = wordBuffer[wordIndex];
+    }
+
+    word[wordIndex] = '\0';
+
+    return word;
+}
+
+Tree* getDataFromFile()
+{
+    Tree* tree = initiateTree();
+
+    file = fopen(inputFile, "r");
+    if (file == NULL)
+    {
+        perror("Failed to open file \"input.txt\" in \"data/\" directory\n");
+        exit(EXIT_FAILURE);
+    }
+
+    while ((characterBuffer = fgetc(file)) != EOF)
+    {
+        if (characterBuffer == ',' || characterBuffer == '\n' || characterBuffer == '\r' || characterBuffer == '.')
+        {
+            char* word = getWordFromBuffer();
+            
+            bufferIndex = 0;
+        }
+        else
+        {
+            wordBuffer[bufferIndex] = characterBuffer;
+            bufferIndex++;
+        }
+    }
+
+    return tree;
+}
+
+void freeTree()
+{
+
+}
