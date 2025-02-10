@@ -43,6 +43,7 @@ Tree* getDataFromFile()
         if (characterBuffer == ',' || characterBuffer == '\n' || characterBuffer == '\r' || characterBuffer == '.')
         {
             char* word = getWordFromBuffer();
+            insertNode(tree, word);
             
             bufferIndex = 0;
         }
