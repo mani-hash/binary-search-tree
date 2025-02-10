@@ -4,6 +4,6 @@
 #include "types.h"
 
 Tree* getDataFromFile();
-void freeTree();
+void freeGraphData(Tree* tree);
 
 #endif
