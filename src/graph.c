@@ -74,10 +74,5 @@ void insertNode(Tree *tree, char* data)
                 currentNode = currentNode->right;
             }
         }
-        else
-        {
-            perror("An error occured traversing the binary tree\n");
-            exit(EXIT_FAILURE);
-        }
     }
 }
