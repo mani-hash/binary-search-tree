@@ -17,7 +17,7 @@ static char* getWordFromBuffer()
 {
     char* word = malloc((bufferIndex + 1) * sizeof(char));
     int wordIndex = 0;
-    for (wordIndex = 0; wordIndex < bufferIndex; bufferIndex++)
+    for (wordIndex = 0; wordIndex < bufferIndex; wordIndex++)
     {
         word[wordIndex] = wordBuffer[wordIndex];
     }
@@ -40,7 +40,12 @@ Tree* getDataFromFile()
 
     while ((characterBuffer = fgetc(file)) != EOF)
     {
-        if (characterBuffer == ',' || characterBuffer == '\n' || characterBuffer == '\r' || characterBuffer == '.')
+        if (characterBuffer == ' ' || characterBuffer == '\n')
+        {
+            continue;
+        }
+
+        if (characterBuffer == ',' || characterBuffer == '.')
         {
             char* word = getWordFromBuffer();
             insertNode(tree, word);
