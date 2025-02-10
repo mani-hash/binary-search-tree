@@ -5,6 +5,7 @@
 #include "decipherFile.h"
 
 static char* getWordFromBuffer();
+static void freeGraphNode(Node *node);
 
 FILE *file;
 const char inputFile[] = "data/input.txt";
@@ -55,7 +56,29 @@ Tree* getDataFromFile()
     return tree;
 }
 
-void freeTree()
+static void freeGraphNode(Node *node)
 {
+    if (node == NULL)
+    {
+        return;
+    }
 
+    if (node->left != NULL)
+    {
+        freeGraphNode(node->left);
+    }
+    else if (node->right != NULL)
+    {
+        freeGraphData(node->right);
+    }
+
+    free(node->data);
+    free(node);
+}
+
+void freeGraphData(Tree* tree)
+{
+    Node *currentNode = tree->root;
+
+    freeGraphNode(currentNode);
 }
