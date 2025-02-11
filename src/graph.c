@@ -9,6 +9,13 @@ static Node* createNode(Node* parent, char* data);
 Tree* initiateTree()
 {
     Tree* tree = malloc(sizeof(Tree));
+
+    if (tree ==  NULL)
+    {
+        perror("There was an error allocating memory\n");
+        exit(EXIT_FAILURE);
+    }
+
     tree->root = NULL;
 
     return tree;
@@ -19,6 +26,12 @@ static Node* createNode(Node* parent, char* data)
     static char nodeName = 'a';
 
     Node* node = malloc(sizeof(Node));
+
+    if (node == NULL)
+    {
+        perror("There was an error allocating memory\n");
+        exit(EXIT_FAILURE);
+    }
 
     node->nodeName = nodeName;
     node->data = data;

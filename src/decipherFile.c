@@ -16,6 +16,13 @@ char characterBuffer;
 static char* getWordFromBuffer()
 {
     char* word = malloc((bufferIndex + 1) * sizeof(char));
+
+    if (word == NULL)
+    {
+        perror("There was an error allocating memory\n");
+        exit(EXIT_FAILURE);
+    }
+
     int wordIndex = 0;
     for (wordIndex = 0; wordIndex < bufferIndex; wordIndex++)
     {
