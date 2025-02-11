@@ -1,4 +1,4 @@
-# Breadth First Search Algorithm
+# Binary Search Tree
 
 ## Table of Contents
 1. [Student Information](#student-information)
