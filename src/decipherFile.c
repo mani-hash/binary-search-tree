@@ -76,14 +76,8 @@ static void freeGraphNode(Node *node)
         return;
     }
 
-    if (node->left != NULL)
-    {
-        freeGraphNode(node->left);
-    }
-    else if (node->right != NULL)
-    {
-        freeGraphNode(node->right);
-    }
+    freeGraphNode(node->left);
+    freeGraphNode(node->right);
 
     free(node->data);
     free(node);
