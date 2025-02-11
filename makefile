@@ -1,6 +1,6 @@
 # Compiler
 CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude -Iinclude/actions -g
+CFLAGS = -Wall -Wextra -Iinclude -Iinclude/actions -g -lm
 
 # Directories
 SRC_DIR = src
