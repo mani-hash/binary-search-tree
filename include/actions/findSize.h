@@ -5,4 +5,4 @@
 
 int FindSize(Tree *tree);
 
-#endif
+#endif // FINDSIZE_H

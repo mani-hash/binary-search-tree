@@ -6,4 +6,4 @@
 void MirrorImage(Tree* tree);
 void displayTree(Tree *tree);
 
-#endif
+#endif // MIRRORTREE_H

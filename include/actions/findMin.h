@@ -6,4 +6,4 @@
 Node* FindMin(Tree* tree);
 void displayMinimumNodeOfTree(Node* minNode);
 
-#endif
+#endif // FINDMIN_H

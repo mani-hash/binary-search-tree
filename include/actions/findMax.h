@@ -6,4 +6,4 @@
 Node* FindMax(Tree* tree);
 void displayMaximumNodeOfTree(Node* maxNode);
 
-#endif
+#endif // FINDMAX_H

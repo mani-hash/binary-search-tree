@@ -6,4 +6,4 @@
 Tree* getDataFromFile();
 void freeGraphData(Tree* tree);
 
-#endif
+#endif // DECIPHERFILE_H

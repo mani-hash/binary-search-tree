@@ -5,4 +5,4 @@
 
 int FindHeight(Tree *tree);
 
-#endif
+#endif // FINDHEIGHT_H
