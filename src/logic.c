@@ -5,20 +5,25 @@
 #include "findSize.h"
 #include "findMin.h"
 #include "findMax.h"
+#include "mirrorTree.h"
 
 void run()
 {
     Tree *tree = getDataFromFile();
 
-    printf("Height of tree is %d\n", findHeightOfTree(tree));
-    printf("Size of tree is %d\n", findSizeOfTree(tree));
+    printf("Height of tree is %d\n", FindHeight(tree));
+    printf("Size of tree is %d\n", FindSize(tree));
     
     printf("\n");
-    displayMinimumNodeOfTree(findMinimumNodeOfTree(tree));
+    displayMinimumNodeOfTree(FindMin(tree));
     printf("\n");
-    displayMaximumNodeOfTree(findMaximumNodeOfTree(tree));
-    
+    displayMaximumNodeOfTree(FindMax(tree));
+    printf("\n");
 
+    MirrorImage(tree);
+
+    printf("Mirrored Image of tree: \n\n");
+    displayTree(tree);
 
     freeGraphData(tree);
 }
