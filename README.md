@@ -21,7 +21,7 @@
 ## Prerequisites
 - **Compiler:** GCC
 - **Build System:** Make
-- **Graph text file:** graph.txt in `data/` directory
+- **Input text file:** input.txt in `data/` directory
 
 ## How to execute the program
 1. **Build the project:**
@@ -59,4 +59,4 @@
    Kid
    Dig
    ```
-- The final executable file is stored in `build/` and named as `bts`
+- The final executable file is stored in `build/` directory and named as `bst`
