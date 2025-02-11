@@ -1,1 +1,10 @@
-Cat, Dog, Rat, Bat, Bag, Nut, Mug, Cup, Kid, Dig.
+Cat
+Dog
+Rat
+Bat
+Bag
+Nut
+Mug
+Cup
+Kid
+Dig
