@@ -4,15 +4,23 @@
 #include "graph.h"
 #include "decipherFile.h"
 
+/*
+ * Static declarations for functions
+ */
 static char* getWordFromBuffer();
 static void freeGraphNode(Node *node);
 
 FILE *file;
 const char inputFile[] = "data/input.txt";
-char wordBuffer[50];
-int bufferIndex = 0; 
-char characterBuffer;
+char wordBuffer[50]; // temporary buffer array to store words
+int bufferIndex = 0; // buffer index to get count of letters read for one valid word
+char characterBuffer; // buffer to store each character read from file
 
+/*
+ * Convert the characters in the buffer to a string
+ *
+ * @return word (string)
+ */
 static char* getWordFromBuffer()
 {
     char* word = malloc((bufferIndex + 1) * sizeof(char));
@@ -34,6 +42,11 @@ static char* getWordFromBuffer()
     return word;
 }
 
+/*
+ * Fetch data from file and build tree data structure
+ *
+ * @return struct Tree (pointer*)
+ */
 Tree* getDataFromFile()
 {
     Tree* tree = initiateTree();
@@ -47,6 +60,7 @@ Tree* getDataFromFile()
 
     while ((characterBuffer = fgetc(file)) != EOF)
     {
+        // skip spaces
         if (characterBuffer == ' ')
         {
             continue;
@@ -69,6 +83,12 @@ Tree* getDataFromFile()
     return tree;
 }
 
+/*
+ * Free dynamically allocated nodes
+ *
+ * @param struct Node (pointer*)
+ * @return void
+ */
 static void freeGraphNode(Node *node)
 {
     if (node == NULL)
@@ -83,6 +103,16 @@ static void freeGraphNode(Node *node)
     free(node);
 }
 
+/*
+ * Free all dynamically allocated structures
+ *
+ * Parent function that encapsulates
+ * all the logic execution to free all dynamic structures
+ * in the graph
+ * 
+ * @param struct Tree (pointer*)
+ * @return void
+ */
 void freeGraphData(Tree* tree)
 {
     Node *currentNode = tree->root;

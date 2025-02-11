@@ -4,8 +4,16 @@
 #include "types.h"
 #include "graph.h"
 
+/*
+ * Static function declarations
+ */
 static Node* createNode(Node* parent, char* data);
 
+/*
+ * Initiates a tree data structure
+ *
+ * @return struct Tree (pointer*)
+ */
 Tree* initiateTree()
 {
     Tree* tree = malloc(sizeof(Tree));
@@ -21,8 +29,16 @@ Tree* initiateTree()
     return tree;
 }
 
+/*
+ * Creates a node for binary tree data structure
+ *
+ * @param Node (pointer*)
+ * @param string (data)
+ * @return struct Node (pointer*)
+ */
 static Node* createNode(Node* parent, char* data)
 {
+    // static variable to track function names
     static char nodeName = 'a';
 
     Node* node = malloc(sizeof(Node));
@@ -44,9 +60,16 @@ static Node* createNode(Node* parent, char* data)
     return node;
 }
 
+/*
+ * Inserts node into binary tree data structure
+ *
+ * @param struct Tree (pointer*)
+ * @param data (string)
+ * @return void
+ */
 void insertNode(Tree *tree, char* data)
 {
-    
+    // Case when tree is empty
     if (tree->root == NULL)
     {
         Node *node = createNode(NULL, data);
@@ -61,7 +84,7 @@ void insertNode(Tree *tree, char* data)
     {
         int comparison =  strcmp(data, currentNode->data);
 
-        if (comparison < 0)
+        if (comparison < 0) // Data is smaller than node's data
         {
             if (currentNode->left == NULL)
             {
@@ -74,7 +97,7 @@ void insertNode(Tree *tree, char* data)
                 currentNode = currentNode->left;
             }
         }
-        else if (comparison > 0)
+        else if (comparison > 0) // Data is greater than node's data
         {
             if (currentNode->right == NULL)
             {

@@ -3,9 +3,21 @@
 #include "mirrorTree.h"
 #include "types.h"
 
+/*
+ * Static declarations for functions
+ */
 static void swapNodes(Node* node);
 static void printNodes(Node* node, int level);
 
+/*
+ * Swap nodes in a binary search tree
+ *
+ * This function contains the logic to
+ * create mirror image of a binary search tree
+ * 
+ * @param struct Node (pointer*)
+ * @return void
+ */
 static void swapNodes(Node* node)
 {
     if (node == NULL)
@@ -21,6 +33,12 @@ static void swapNodes(Node* node)
     swapNodes(node->right);
 }
 
+/*
+ * Expose mirror logic
+ *
+ * @param struct Tree (pointer*)
+ * @return void
+ */
 void MirrorImage(Tree* tree)
 {
     if (tree->root == NULL)
@@ -31,6 +49,13 @@ void MirrorImage(Tree* tree)
     swapNodes(tree->root);
 }
 
+/*
+ * Print the binary search tree
+ *
+ * @param struct Node (pointer*)
+ * @param level (int)
+ * @return void
+ */
 static void printNodes(Node* node, int level)
 {
     if (node == NULL)
@@ -43,6 +68,7 @@ static void printNodes(Node* node, int level)
         printf(" ");
     }
 
+    // Prefix for the node
     if (node->parent == NULL)
     {
         printf("Root:");
@@ -64,6 +90,12 @@ static void printNodes(Node* node, int level)
 
 }
 
+/*
+ * Expose display functions
+ *
+ * @param struct Tree (pointer*)
+ * @return void
+ */
 void displayTree(Tree *tree)
 {
     printNodes(tree->root, 0);

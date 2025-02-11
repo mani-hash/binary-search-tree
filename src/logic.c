@@ -7,6 +7,15 @@
 #include "findMax.h"
 #include "mirrorTree.h"
 
+/*
+ * Main run logic
+ *
+ * Contains all the run logic to be
+ * executed in the lifecycle of the
+ * program
+ * 
+ * @return void
+ */
 void run()
 {
     Tree *tree = getDataFromFile();

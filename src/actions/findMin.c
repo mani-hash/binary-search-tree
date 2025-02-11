@@ -2,8 +2,17 @@
 #include "types.h"
 #include "findMin.h"
 
+/*
+ * Static declarations for functions
+ */
 static Node* findMinNode(Node* node);
 
+/*
+ * Calculate minimum node of a binary search tree
+ *
+ * @param struct Node (pointer*)
+ * @return struct Node (pointer*)
+ */
 static Node* findMinNode(Node* node)
 {
     if (node->left == NULL)
@@ -14,6 +23,12 @@ static Node* findMinNode(Node* node)
     return findMinNode(node->left);
 }
 
+/*
+ * Expose findMinNode functions
+ *
+ * @param struct Node (pointer*)
+ * @return struct Node (pointer*)
+ */
 Node* FindMin(Tree* tree)
 {
     if (tree->root == NULL)
@@ -25,6 +40,12 @@ Node* FindMin(Tree* tree)
     
 }
 
+/*
+ * Calculate minimum node of a binary search tree
+ *
+ * @param struct Node (pointer*)
+ * @return void
+ */
 void displayMinimumNodeOfTree(Node* minNode)
 {
     printf("Minimum node of tree => \n");
