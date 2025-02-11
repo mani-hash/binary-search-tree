@@ -26,7 +26,7 @@ static int calculateMaxHeight(Node *node)
     return getMaxHeight(leftHeight, rightHeight) + 1;
 }
 
-int findHeightOfTree(Tree *tree)
+int FindHeight(Tree *tree)
 {
     return calculateMaxHeight(tree->root);
 }

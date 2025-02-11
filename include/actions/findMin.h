@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-Node* findMinimumNodeOfTree(Tree* tree);
+Node* FindMin(Tree* tree);
 void displayMinimumNodeOfTree(Node* minNode);
 
 #endif

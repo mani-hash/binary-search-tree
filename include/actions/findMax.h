@@ -3,7 +3,7 @@
 
 #include "types.h"
 
-Node* findMaximumNodeOfTree(Tree* tree);
+Node* FindMax(Tree* tree);
 void displayMaximumNodeOfTree(Node* maxNode);
 
 #endif

@@ -14,7 +14,7 @@ static int calculateTotalSize(Node *node)
     return calculateTotalSize(node->left) + calculateTotalSize(node->right) + 1;
 }
 
-int findSizeOfTree(Tree *tree)
+int FindSize(Tree *tree)
 {
     return calculateTotalSize(tree->root);
 }

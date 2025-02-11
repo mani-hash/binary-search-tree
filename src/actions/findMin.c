@@ -14,7 +14,7 @@ static Node* findMinNode(Node* node)
     return findMinNode(node->left);
 }
 
-Node* findMinimumNodeOfTree(Tree* tree)
+Node* FindMin(Tree* tree)
 {
     if (tree->root == NULL)
     {

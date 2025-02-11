@@ -3,6 +3,6 @@
 
 #include "types.h"
 
-int findHeightOfTree(Tree *tree);
+int FindHeight(Tree *tree);
 
 #endif

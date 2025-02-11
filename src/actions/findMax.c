@@ -14,7 +14,7 @@ static Node* findMaxNode(Node* node)
     return findMaxNode(node->right);
 }
 
-Node* findMaximumNodeOfTree(Tree *tree)
+Node* FindMax(Tree *tree)
 {
     if (tree->root == NULL)
     {
