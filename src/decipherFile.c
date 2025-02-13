@@ -80,6 +80,8 @@ Tree* getDataFromFile()
         }
     }
 
+    fclose(file);
+
     return tree;
 }
 
