@@ -10,7 +10,6 @@
 
 ## Student Information
 - **Name:** Manimehalan Thiyagarajan
-- **Registration Number:** 2023/CS/106
 - **Index Number:** 23001062
 - **Email Address:** 2023cs106@stu.ucsc.cmb.ac.lk
 
