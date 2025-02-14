@@ -50,7 +50,7 @@ static Node* createNode(Node* parent, char* data)
     }
 
     node->nodeName = nodeName;
-    node->data = data;
+    node->data = strdup(data); // duplicate the string
     node->parent = parent;
     node->left = NULL;
     node->right = NULL;
