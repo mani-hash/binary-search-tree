@@ -1,12 +1,14 @@
 # Binary Search Tree
 
 ## Table of Contents
-1. [Student Information](#student-information)
-2. [Testing Environment](#testing-environment)
-3. [Prerequisites](#prerequisites)
-4. [How to execute the program](#how-to-execute-the-program)
-5. [Remove build files](#remove-build-files)
-6. [Special Notes](#special-notes)
+- [Binary Search Tree](#binary-search-tree)
+  - [Table of Contents](#table-of-contents)
+  - [Student Information](#student-information)
+  - [Testing Environment](#testing-environment)
+  - [Prerequisites](#prerequisites)
+  - [How to execute the program](#how-to-execute-the-program)
+  - [Remove build files](#remove-build-files)
+  - [Special Notes](#special-notes)
 
 ## Student Information
 - **Name:** Manimehalan Thiyagarajan
@@ -40,12 +42,8 @@
 ## Special Notes
 - `data/input.txt` is necessary for the project to function.
 - Modify the contents of `input.txt` to change binary search tree data
-- Data in `input.txt` can be in **either** of the below formats
-   - All the data can be entered in one line separated by **commas** and must end with a fullstop **"."**
-   ```
-   Cat, Dog, Rat, Bat, Bag, Nut, Mug, Cup, Kid, Dig.
-   ```
-   - Else each word can be entered in the file line by line as shown below
+- Data in `input.txt` must be in the below format:
+   - Each word should be entered in the file line by line as shown below
    ```
    Cat
    Dog
