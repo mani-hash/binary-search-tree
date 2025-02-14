@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 #include "types.h"
 #include "graph.h"
 #include "decipherFile.h"
@@ -7,40 +8,14 @@
 /*
  * Static declarations for functions
  */
-static char* getWordFromBuffer();
+
 static void freeGraphNode(Node *node);
 
 FILE *file;
 const char inputFile[] = "data/input.txt";
-char wordBuffer[50]; // temporary buffer array to store words
-int bufferIndex = 0; // buffer index to get count of letters read for one valid word
-char characterBuffer; // buffer to store each character read from file
-
-/*
- * Convert the characters in the buffer to a string
- *
- * @return word (string)
- */
-static char* getWordFromBuffer()
-{
-    char* word = malloc((bufferIndex + 1) * sizeof(char));
-
-    if (word == NULL)
-    {
-        perror("There was an error allocating memory\n");
-        exit(EXIT_FAILURE);
-    }
-
-    int wordIndex = 0;
-    for (wordIndex = 0; wordIndex < bufferIndex; wordIndex++)
-    {
-        word[wordIndex] = wordBuffer[wordIndex];
-    }
-
-    word[wordIndex] = '\0';
-
-    return word;
-}
+char *line = NULL; // line buffer
+size_t lineLength = 0; // monitor length of line
+ssize_t read; // number of lines read
 
 /*
  * Fetch data from file and build tree data structure
@@ -58,27 +33,24 @@ Tree* getDataFromFile()
         exit(EXIT_FAILURE);
     }
 
-    while ((characterBuffer = fgetc(file)) != EOF)
+    while ((read = getline(&line, &lineLength, file)) != -1)
     {
-        // skip spaces
-        if (characterBuffer == ' ')
+        // skip newlines
+        if (*line == '\n')
         {
             continue;
         }
 
-        if (characterBuffer == ',' || characterBuffer == '.' || characterBuffer == '\n')
+        // remove newline characters
+        if (line[read - 1] == '\n')
         {
-            char* word = getWordFromBuffer();
-            insertNode(tree, word);
-            
-            bufferIndex = 0;
+            line[read - 1] = '\0';
         }
-        else
-        {
-            wordBuffer[bufferIndex] = characterBuffer;
-            bufferIndex++;
-        }
+
+        insertNode(tree, line);
     }
+
+    free(line);
 
     fclose(file);
 
